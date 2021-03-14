@@ -129,9 +129,9 @@ dmypy.json
 .pyre/
 
 # Robot
-.html
-.png
-.xml
+*.html
+*.png
+*.xml
 ./SuiteSiteTestPractice/test_results
 
 
