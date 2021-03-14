@@ -1,5 +1,5 @@
 *** Settings ***
-Library             Selenium
+Resource            ../resource/Resource.robot
 Test Setup          Abrir navegador
 Test Teardown       Fechar navegador
 
@@ -7,10 +7,6 @@ Test Teardown       Fechar navegador
 ### SETUP ele roda keyword antes da suite ou antes de um Teste
 ### TEARDOWN ele roda keyword depois de uma suite ou um teste
 
-
-*** Variables ***
-${URL}          http://automationpractice.com
-${BROWSER}      chrome
 
 ** Test Cases ***
 
@@ -26,3 +22,4 @@ Caso de teste 2: Pesquisar Produto não Existentes
 
 *** Keywords ***
 
+ 

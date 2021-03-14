@@ -131,4 +131,7 @@ dmypy.json
 # Robot
 .html
 .png
+.xml
+/test_results
+
 
