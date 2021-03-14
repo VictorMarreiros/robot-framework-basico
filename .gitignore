@@ -132,6 +132,7 @@ dmypy.json
 .html
 .png
 .xml
-/test_results
+./SuiteSiteTestPractice/test_results
+
 
 
