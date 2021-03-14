@@ -1,5 +1,12 @@
 *** Settings ***
-Library Selenium
+Library             Selenium
+Test Setup          Abrir navegador
+Test Teardown       Fechar navegador
+
+
+### SETUP ele roda keyword antes da suite ou antes de um Teste
+### TEARDOWN ele roda keyword depois de uma suite ou um teste
+
 
 *** Variables ***
 ${URL}          http://automationpractice.com

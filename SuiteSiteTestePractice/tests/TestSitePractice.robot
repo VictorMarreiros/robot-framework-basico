@@ -1,5 +1,8 @@
 *** Settings ***
-Library Selenium
+Library             Selenium
+Test Setup          Abrir navegador
+Test Teardown       Fechar navegador
+
 
 *** Variables ***
 ${URL}          http://automationpractice.com
@@ -18,3 +21,6 @@ Caso de teste 2: Pesquisar Produto não Existentes
     Conferir se a pagina home foi exibida
     Digitar o nome do produto "ItemNãoExistente" no campo de PesquisarClicar no botão Pesquisar
     Conferir mensagem de erro "No results were found for your search "itemNãoExistente""
+
+*** Keywords ***
+
