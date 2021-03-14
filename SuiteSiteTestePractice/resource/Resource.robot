@@ -38,4 +38,4 @@ Conferir mensagem de erro "No results were found for your search "${PRODUTO}""
     Wait Until Element Is Visible   xpath=//*[@id="center_column"]//p[@class="alert alert-warning"]
     Title Should Be                 Search - My Store 
     Page Should Contain Image       css=img[src="http://automationpractice.com/img/logo.jpg"]
-    Page Should Contain Element     xpath=//*[@id="center_column"]//p[@class="alert alert-warning"][contains(text(), "${PRODUTO}")]
+    Page Should Contain Element     xpath=//*[@id="center_column"]//p[@class="alert alert-warning"][contains(text(), "No results were found for your search")]
