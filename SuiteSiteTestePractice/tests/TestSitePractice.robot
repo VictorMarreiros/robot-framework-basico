@@ -1,7 +1,10 @@
 *** Settings ***
-Library             Selenium
-Test Setup          Abrir navegador
-Test Teardown       Fechar navegador
+Resource            ../resource/Resource.robot
+Test Setup         Abrir navegador
+Test Teardown      Fechar navegador
+
+### SETUP ele roda keyword antes da suite ou antes de um Teste
+### TEARDOWN ele roda keyword depois de uma suite ou um teste
 
 
 *** Variables ***
@@ -24,5 +27,5 @@ Caso de teste 2: Pesquisar Produto não Existentes
     Clicar no botão Pesquisar
     Conferir mensagem de erro "No results were found for your search "itemNãoExistente""
 
-*** Keywords ***
+#*** Keywords ***
 

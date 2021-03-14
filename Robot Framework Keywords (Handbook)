@@ -1,0 +1,37 @@
+Robot Framework Keywords (Handbook)
+
+Open Browser
+Close Browser
+
+
+Input Text
+Fill Text
+
+
+Click 
+Click Element
+
+
+
+Title Should Be
+
+
+Wait Until Element Is Visible
+
+
+
+
+
+
+
+Selectors & xPath's:
+https://www.swtestacademy.com/xpath-selenium/
+https://www.swtestacademy.com/css-selenium/
+
+
+css=a[@class="product-name"][contains(text(), "Blouse")]
+
+
+
+
+xpath=//*[@id="center_column"]//*[@class="product-name"]
