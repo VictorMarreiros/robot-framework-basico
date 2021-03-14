@@ -26,6 +26,13 @@ Caso de Teste 3: Listar Produtos
     E clicar na subcategoria "Summer Dresses"
     Então deve abrir a pagina "Summer Dresses"
 
+Caso de teste 4: Adicionar Produto no Carrinho
+    Dado que estou na página home do site
+    Quando eu pesquisar pelo produto "t-shirt"
+    E clicar no botão "Add to cart" do produto
+    E clicar no botão "Proceed to checkout"
+    Então deve abrir a pagina do carrinho com um produto adicionado
+
 *** Keywords ***
 Dado que estou na página home do site
     Acessar pagina home do site
@@ -36,6 +43,12 @@ Quando eu pesquisar pelo produto "${PRODUTO}"
 
 Quando passar o mouse por cima da categoria "${CATEGORIA}"
     Passar mouse por cima da categoria "${CATEGORIA}" no menu principal superior de categorias
+
+E clicar no botão "${ADD_CARRINHO}" do produto
+    Clicar no botão "${ADD_CARRINHO}" do produto
+
+E clicar no botão "${BTN_CHECKOUT}"
+    Clicar no botão "${BTN_CHECKOUT}"
 
 E clicar na subcategoria "${SUBCATEGORIA}"
     Clicar na sub categoria "${SUBCATEGORIA}"
@@ -48,4 +61,6 @@ Então a página deve exibir a mensagem "${MENSAGEM_ALERTA}"
 
 Então deve abrir a pagina "${SUBCATEGORIA}"
     Conferir se é a pagina da subcategoria "${SUBCATEGORIA}"
-    
+
+Então deve abrir a pagina do carrinho com um produto adicionado
+    Conferir se o produto foi adicionado ao carrinho

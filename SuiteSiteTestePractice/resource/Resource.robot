@@ -25,12 +25,18 @@ Digitar o nome do produto "${PRODUTO}" no campo de Pesquisa
 Passar mouse por cima da categoria "${CATEGORIA}" no menu principal superior de categorias
     Mouse Over                      css=a[title="${CATEGORIA}"]
 
+Clicar no botão "${ADD_CARRINHO}" do produto
+    Click Link                      css=a[title="${ADD_CARRINHO}"]
+
+Clicar no botão "${BTN_CHECKOUT}"
+    Wait Until Element Is Visible   xpath=//*[@id="layer_cart"]//*[@title="${BTN_CHECKOUT}"]
+    Click Link                      xpath=//*[@id="layer_cart"]//*[@title="${BTN_CHECKOUT}"]
+
 Clicar na sub categoria "${SUBCATEGORIA}"
     Click Link                      css=a[title="${SUBCATEGORIA}"]
 
 Clicar no botão Pesquisar
     Click Button           css=button[name="submit_search"]
-
 
 Conferir se o produto "${PRODUTO}" foi listado no site
     Wait Until Element Is Visible   css=h1[class^=page-heading]
@@ -51,3 +57,7 @@ Conferir se é a pagina da subcategoria "${SUBCATEGORIA}"
     Page Should Contain Element     xpath=//*[@id="center_column"]//div[@class="content_scene_cat_bg"]
     Page Should Contain Element     xpath=//*[@id="center_column"]//*[@class="cat-name"][contains(text(), "Summer Dresses")]
 
+Conferir se o produto foi adicionado ao carrinho
+    Wait Until Element Is Visible   css=#cart_title
+    Title Should Be                 Order - My Store
+    Page Should Contain Element     css=p[class="product-name"] 

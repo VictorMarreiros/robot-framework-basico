@@ -31,4 +31,10 @@ Caso de teste 3: Listar Produtos
     Clicar na sub categoria "Summer Dresses"
     Conferir se é a pagina da subcategoria "Summer Dresses"
 
-
+Caso de teste 4: Adicionar Produto no Carrinho
+    Acessar pagina home do site
+    Digitar o nome do produto "t-shirt" no campo de Pesquisa
+    Clicar no botão Pesquisar
+    Clicar no botão "Add to cart" do produto
+    Clicar no botão "Proceed to checkout"
+    Conferir se o produto foi adicionado ao carrinho
