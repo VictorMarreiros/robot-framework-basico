@@ -22,6 +22,11 @@ Acessar pagina home do site
 Digitar o nome do produto "${PRODUTO}" no campo de Pesquisa
     Input Text      css=#search_query_top        ${PRODUTO}
 
+Passar mouse por cima da categoria "${CATEGORIA}" no menu principal superior de categorias
+    Mouse Over                      css=a[title="${CATEGORIA}"]
+
+Clicar na sub categoria "${SUBCATEGORIA}"
+    Click Link                      css=a[title="${SUBCATEGORIA}"]
 
 Clicar no botão Pesquisar
     Click Button           css=button[name="submit_search"]
@@ -40,6 +45,9 @@ Conferir mensagem de erro "${MENSAGEM_ALERTA}"
     Page Should Contain Image       css=img[src="http://automationpractice.com/img/logo.jpg"]
     Page Should Contain Element     xpath=//*[@id="center_column"]//p[@class="alert alert-warning"][contains(text(), "No results were found for your search")]
 
-
-
+Conferir se é a pagina da subcategoria "${SUBCATEGORIA}"
+    Wait Until Element Is Visible   css=h1[class^=page-heading]
+    Title Should Be                 Summer Dresses - My Store
+    Page Should Contain Element     xpath=//*[@id="center_column"]//div[@class="content_scene_cat_bg"]
+    Page Should Contain Element     xpath=//*[@id="center_column"]//*[@class="cat-name"][contains(text(), "Summer Dresses")]
 
