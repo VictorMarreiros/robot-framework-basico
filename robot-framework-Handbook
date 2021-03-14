@@ -1,0 +1,42 @@
+Robot Framework Keywords (Handbook)
+
+
+> Commands
+# Setando pasta de saida do log
+robot -d ./pasta_results suite_test.robot
+
+# Especificando um caso de teste Especifico
+robot -t "Caso de teste 1: Pesquisar produto Existente" suite_test.robot
+
+# Log mais detalhado
+robot -L trace suite_test.robot
+
+# Passando variável
+robot --variable PRODUTO:itemNaoExistente suite_test.robot
+
+# é possível rodar tudo de uma vez
+robot -d ./test_results -v id:1 -L trace -t "Caso de teste 2: Produto nao Existente" suite_test.robot
+
+
+> Keywords
+
+Open Browser
+Close Browser
+
+Input Text
+Fill Text
+
+Click 
+Click Element
+
+Title Should Be
+
+Wait Until Element Is Visible
+
+
+> Selectors & xPath's:
+https://www.swtestacademy.com/xpath-selenium/
+https://www.swtestacademy.com/css-selenium/
+
+css=a[@class="product-name"][contains(text(), "Blouse")]
+xpath=//*[@id="center_column"]//*[@class="product-name"]
