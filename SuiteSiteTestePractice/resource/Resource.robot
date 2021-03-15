@@ -26,10 +26,14 @@ Passar mouse por cima da categoria "${CATEGORIA}" no menu principal superior de 
     Mouse Over                      css=a[title="${CATEGORIA}"]
 
 Clicar no botão "${ADD_CARRINHO}" do produto
+    Wait Until Element Is Visible   css=h1[class^=page-heading]
+    Title Should Be                 Search - My Store
     Click Link                      css=a[title="${ADD_CARRINHO}"]
+
 
 Clicar no botão "${BTN_CHECKOUT}"
     Wait Until Element Is Visible   xpath=//*[@id="layer_cart"]//*[@title="${BTN_CHECKOUT}"]
+    Page Should Contain Element     xpath=//*[@id="layer_cart"]//*[@class="ajax_cart_product_txt "][contains(text(), "There is 1 item in your cart")]
     Click Link                      xpath=//*[@id="layer_cart"]//*[@title="${BTN_CHECKOUT}"]
 
 Clicar na sub categoria "${SUBCATEGORIA}"
@@ -58,6 +62,7 @@ Conferir se é a pagina da subcategoria "${SUBCATEGORIA}"
     Page Should Contain Element     xpath=//*[@id="center_column"]//*[@class="cat-name"][contains(text(), "Summer Dresses")]
 
 Conferir se o produto foi adicionado ao carrinho
-    Wait Until Element Is Visible   css=#cart_title
-    Title Should Be                 Order - My Store
-    Page Should Contain Element     css=p[class="product-name"] 
+    Wait Until Element Is Visible       css=#cart_title
+    Title Should Be                     Order - My Store
+    Page Should Contain Element         css=p[class="product-name"]
+    Page Should Contain Element         xpath=//*[@id="product_price_1_1_0"]/span[@class="price"][contains(text(), "$16.51")]
