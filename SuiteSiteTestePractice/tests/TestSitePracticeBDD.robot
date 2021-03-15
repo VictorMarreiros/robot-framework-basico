@@ -33,6 +33,16 @@ Caso de teste 4: Adicionar Produto no Carrinho
     E clicar no botão "Proceed to checkout"
     Então deve abrir a pagina do carrinho com um produto adicionado
 
+Caso de teste 5: Remover Produto
+    Dado que estou na página home do site
+    Quando eu pesquisar pelo produto "t-shirt"
+    E clicar no botão "Add to cart" do produto
+    E clicar no botão "Proceed to checkout"
+    E voltar para pagina home
+    E clicar no icone carrinho de compras
+    E clicar no botão de remoção de produtos "Delete" 
+    Então devo ver a mensagem "Your shopping cart is empty."
+
 *** Keywords ***
 Dado que estou na página home do site
     Acessar pagina home do site
@@ -43,6 +53,15 @@ Quando eu pesquisar pelo produto "${PRODUTO}"
 
 Quando passar o mouse por cima da categoria "${CATEGORIA}"
     Passar mouse por cima da categoria "${CATEGORIA}" no menu principal superior de categorias
+
+E voltar para pagina home
+    Voltar para pagina home do site
+
+E clicar no icone carrinho de compras
+    Clicar no icone carrinho de compras no menu superior direito
+
+E clicar no botão de remoção de produtos "${DELETE}"
+    Clicar no botão de remoção de produtos "${DELETE}" no produto do carrinho
 
 E clicar no botão "${ADD_CARRINHO}" do produto
     Clicar no botão "${ADD_CARRINHO}" do produto
@@ -64,3 +83,6 @@ Então deve abrir a pagina "${SUBCATEGORIA}"
 
 Então deve abrir a pagina do carrinho com um produto adicionado
     Conferir se o produto foi adicionado ao carrinho
+
+Então devo ver a mensagem "${MSG_EMPTY_CART}"
+    Conferir mensagem "${MSG_EMPTY_CART}"

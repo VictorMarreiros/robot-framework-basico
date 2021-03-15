@@ -38,3 +38,14 @@ Caso de teste 4: Adicionar Produto no Carrinho
     Clicar no botão "Add to cart" do produto
     Clicar no botão "Proceed to checkout"
     Conferir se o produto foi adicionado ao carrinho
+
+Caso de teste 5: Remover Produto
+    Acessar pagina home do site
+    Digitar o nome do produto "t-shirt" no campo de Pesquisa
+    Clicar no botão Pesquisar
+    Clicar no botão "Add to cart" do produto
+    Clicar no botão "Proceed to checkout"
+    Voltar para pagina home do site
+    Clicar no icone carrinho de compras no menu superior direito
+    Clicar no botão de remoção de produtos "Delete" no produto do carrinho
+    Conferir mensagem "Your shopping cart is empty."

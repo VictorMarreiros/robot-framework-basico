@@ -25,44 +25,58 @@ Digitar o nome do produto "${PRODUTO}" no campo de Pesquisa
 Passar mouse por cima da categoria "${CATEGORIA}" no menu principal superior de categorias
     Mouse Over                      css=a[title="${CATEGORIA}"]
 
-Clicar no botão "${ADD_CARRINHO}" do produto
-    Wait Until Element Is Visible   css=h1[class^=page-heading]
-    Title Should Be                 Search - My Store
-    Click Link                      css=a[title="${ADD_CARRINHO}"]
+Clicar no icone carrinho de compras no menu superior direito
+    Click Link                      css=a[title="View my shopping cart"]
 
+Clicar no botão de remoção de produtos "${DELETE}" no produto do carrinho
+    Wait Until Element Is Visible       css=h1[class^=page-heading]
+    Title Should Be                     Order - My Store
+    Click Link                          css=a[title="${DELETE}"]
+
+Clicar no botão "${ADD_CARRINHO}" do produto
+    Wait Until Element Is Visible       css=h1[class^=page-heading]
+    Title Should Be                     Search - My Store
+    Click Link                          css=a[title="${ADD_CARRINHO}"]
 
 Clicar no botão "${BTN_CHECKOUT}"
-    Wait Until Element Is Visible   xpath=//*[@id="layer_cart"]//*[@title="${BTN_CHECKOUT}"]
-    Page Should Contain Element     xpath=//*[@id="layer_cart"]//*[@class="ajax_cart_product_txt "][contains(text(), "There is 1 item in your cart")]
-    Click Link                      xpath=//*[@id="layer_cart"]//*[@title="${BTN_CHECKOUT}"]
+    Wait Until Element Is Visible       xpath=//*[@id="layer_cart"]//*[@title="${BTN_CHECKOUT}"]
+    Page Should Contain Element         xpath=//*[@id="layer_cart"]//*[@class="ajax_cart_product_txt "][contains(text(), "There is 1 item in your cart")]
+    Click Link                          xpath=//*[@id="layer_cart"]//*[@title="${BTN_CHECKOUT}"]
 
 Clicar na sub categoria "${SUBCATEGORIA}"
-    Click Link                      css=a[title="${SUBCATEGORIA}"]
+    Click Link                          css=a[title="${SUBCATEGORIA}"]
 
 Clicar no botão Pesquisar
-    Click Button           css=button[name="submit_search"]
+    Click Button                        css=button[name="submit_search"]
+
+Voltar para pagina home do site
+    Go To                               ${URL}
 
 Conferir se o produto "${PRODUTO}" foi listado no site
-    Wait Until Element Is Visible   css=h1[class^=page-heading]
-    Title Should Be                 Search - My Store
-    Page Should Contain Image       css=img[src="http://automationpractice.com/img/p/7/7-home_default.jpg"]
-    Page Should Contain Link        xpath=//*[@id="center_column"]//a[@class="product-name"][contains(text(), "${PRODUTO}")]
+    Wait Until Element Is Visible       css=h1[class^=page-heading]
+    Title Should Be                     Search - My Store
+    Page Should Contain Image           css=img[src="http://automationpractice.com/img/p/7/7-home_default.jpg"]
+    Page Should Contain Link            xpath=//*[@id="center_column"]//a[@class="product-name"][contains(text(), "${PRODUTO}")]
 
 
 Conferir mensagem de erro "${MENSAGEM_ALERTA}"
-    Wait Until Element Is Visible   xpath=//*[@id="center_column"]//p[@class="alert alert-warning"]
-    Title Should Be                 Search - My Store 
-    Page Should Contain Image       css=img[src="http://automationpractice.com/img/logo.jpg"]
-    Page Should Contain Element     xpath=//*[@id="center_column"]//p[@class="alert alert-warning"][contains(text(), "No results were found for your search")]
+    Wait Until Element Is Visible       xpath=//*[@id="center_column"]//p[@class="alert alert-warning"]
+    Title Should Be                     Search - My Store 
+    Page Should Contain Image           css=img[src="http://automationpractice.com/img/logo.jpg"]
+    Page Should Contain Element         xpath=//*[@id="center_column"]//p[@class="alert alert-warning"][contains(text(), "No results were found for your search")]
 
 Conferir se é a pagina da subcategoria "${SUBCATEGORIA}"
-    Wait Until Element Is Visible   css=h1[class^=page-heading]
-    Title Should Be                 Summer Dresses - My Store
-    Page Should Contain Element     xpath=//*[@id="center_column"]//div[@class="content_scene_cat_bg"]
-    Page Should Contain Element     xpath=//*[@id="center_column"]//*[@class="cat-name"][contains(text(), "Summer Dresses")]
+    Wait Until Element Is Visible       css=h1[class^=page-heading]
+    Title Should Be                     Summer Dresses - My Store
+    Page Should Contain Element         xpath=//*[@id="center_column"]//div[@class="content_scene_cat_bg"]
+    Page Should Contain Element         xpath=//*[@id="center_column"]//*[@class="cat-name"][contains(text(), "Summer Dresses")]
 
 Conferir se o produto foi adicionado ao carrinho
     Wait Until Element Is Visible       css=#cart_title
     Title Should Be                     Order - My Store
     Page Should Contain Element         css=p[class="product-name"]
     Page Should Contain Element         xpath=//*[@id="product_price_1_1_0"]/span[@class="price"][contains(text(), "$16.51")]
+
+Conferir mensagem "${MSG_EMPTY_CART}"
+    Wait Until Element Is Visible       css=h1[class^=page-heading]
+    Page Should Contain Element         xpath=//*[@id="center_column"]/p[@class="alert alert-warning"][contains(text(), "Your shopping cart is empty.")]
