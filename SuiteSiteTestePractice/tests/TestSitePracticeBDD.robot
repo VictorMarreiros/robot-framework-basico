@@ -43,6 +43,16 @@ Caso de teste 5: Remover Produto
     E clicar no botão de remoção de produtos "Delete" 
     Então devo ver a mensagem "Your shopping cart is empty."
 
+Caso de teste 6: Adicionar Cliente
+    Dado que estou na página home do site
+    Quando clico no botão "Sign in"
+    E inserir um e-mail válido
+    E clicar no botão "Create an account"
+    E preencher os campos obrigatórios
+    E clicar em "Register" para finalizar
+    Então o cadastro deve ser finalizado com sucesso
+
+
 *** Keywords ***
 Dado que estou na página home do site
     Acessar pagina home do site

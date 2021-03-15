@@ -49,3 +49,11 @@ Caso de teste 5: Remover Produto
     Clicar no icone carrinho de compras no menu superior direito
     Clicar no botão de remoção de produtos "Delete" no produto do carrinho
     Conferir mensagem "Your shopping cart is empty."
+
+Caso de teste 6: Adicionar Cliente
+    Acessar pagina home do site
+    Clicar no botão superior direito "Sign in"
+    Inserir um e-mail válido
+    Clicar no botão "Create an account"
+    Preencher os campos obrigatórios
+    Clicar em "Register" para finalizar o cadastro
