@@ -1,11 +1,11 @@
 *** Settings ***
-Documentation           Documentação da API: https://fakerestapi.azurewebsites.net/swagger/v1/swagger.json
+Documentation           Documentação da API: https://fakerestapi.azurewebsites.net/index.html
 Library                 ResquestsLibrary
 Library                 Collections
 
 
 *** Variables ***
-${URL_API}              https://fakerestapi.azurewebsites.net/api
+${URL_API}              https://fakerestapi.azurewebsites.net/api/v1/Books
 
 *** Keywords ***
 ### SETUP E TEARDOWNS

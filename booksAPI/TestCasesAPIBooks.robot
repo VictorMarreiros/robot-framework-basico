@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation       Documentação da API: https://fakerestapi.azurewebsites.net/swagger/v1/swagger.json
+Documentation       Documentação da API: https://fakerestapi.azurewebsites.net/index.html
 Resource            ./ResourceAPI.robot
 Suite Setup   Conectar a minha API
 
