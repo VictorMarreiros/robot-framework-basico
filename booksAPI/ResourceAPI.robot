@@ -91,14 +91,9 @@ Conferir se retorna todos os dados alterados do livro
     Log Dictionary                      ${RESPOSTA.json()}
 
 
-Deletar o livro "${BOOK_ID}"
+Conferir se deleta os dados do livro "${BOOK_ID}"
     ${HEADERS}          Create Dictionary   content-type=application/json 
     ${RESPOSTA}         DELETE On Session   fakeAPI     Books/${BOOK_ID}
     Set Test Variable   ${RESPOSTA}
 
 
-Conferir se deleta os dados do livro "${BOOK_ID}"
-    ${RESPOSTA}                                GET On Session      fakeAPI     Books/${BOOK_ID}
-    Should Be Equal As Strings                 ${RESPOSTA.status_code}                      404
-    Should Be Equal As Strings                 ${RESPOSTA.reason}                    Not Found
-    Log Dictionary                             ${RESPOSTA.json()}
