@@ -27,7 +27,7 @@ Digitar o nome do produto "${PRODUTO}" no campo de Pesquisa
 Passar mouse por cima da categoria "${CATEGORIA}" no menu principal superior de categorias
     Mouse Over                          css=a[title="${CATEGORIA}"]
 
-
+# não encontrei um meio de identificar o text 'Sign in'         to-do
 Clicar no botão superior direito "Sign in"
     Title Should Be                     Login - My Store
     Click Link                          css=a[class="login"]
@@ -67,28 +67,32 @@ Inserir um e-mail válido
     ${EMAIL}=                           FakerLibrary.Email
     Input Text                          css=#email_create               ${EMAIL}      
 
-
+# não encontrei um meio de identificar o text 'Create an account'         to-do
 Clicar no botão "Create an account"
     Click Button                        css=button[id=#SubmitCreate]
 
 
 Preencher os campos obrigatórios
     ${FIRSTNAME}=                       FakerLibrary.First Name
-    Input Text                          css=#customer_firstname         ${FIRSTNAME}
+    Input Text                          ${CMP_CLIENTE_NOME}         ${FIRSTNAME}
     ${LASTNAME}=                        FakerLibrary.Last Name    
-    Input Text                          css=#customer_lastname          ${LASTNAME}
-    Input Text                          css=#email                      ${EMAIL}
+    Input Text                          ${CMP_CLIENTE_SOBRENOME}    ${LASTNAME}
+    Input Text                          ${CMP_CLIENTE_EMAIL}        ${EMAIL}
     ${PASSWORD}=                        FakerLibrary.Password
-    Input Text                          css=#passwd                     ${PASSWORD}
-    Input Text                          css=#firstname                  ${FIRSTNAME}   
-    Input Text                          css=#lastname                   ${LASTNAME}
-    Input Text                          css=#address1
-    Input Text                          css=#city
-    Input Text                          css=#id_state    select
-    Input Text                          css=#postcode                   FakerLibrary.Postcode
-    Input Text                          css=#phone_mobile
-    Input Text                          css=#alias
-    Input Text                          css=#
+    Input Text                          ${CMP_CLIENTE_SENHA}        ${PASSWORD}
+    Input Text                          ${CMP_NOME}                 ${FIRSTNAME}   
+    Input Text                          ${CMP_SOBRENOME}            ${LASTNAME}
+    ${ENDERECO}=                        FakerLibrary.Address
+    Input Text                          ${CMP_ENDERECO}             ${ENDERECO}
+    ${CIDADE}=                          FakerLibrary.City
+    Input Text                          ${CMP_CIDADE}               ${CIDADE}
+    ${ESTADO}=                          FakerLibrary.State
+    Input Text                          ${CMP_ESTADO}               ${ESTADO}
+    ${COD_POSTAL}=                      FakerLibrary.Postcode
+    Input Text                          ${CMP_COD_POSTAL}           ${COD_POSTAL}
+    ${NUMERO_CEL}=
+    Input Text                          ${CMP_NCELULAR}             ${NUMERO_CEL}
+    Input Text                          ${CMP_ALIAS}                ${ENDERECO}
 
 
 Voltar para pagina home do site
